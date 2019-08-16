@@ -22,7 +22,7 @@ public class Presenter implements Contract.PresenterIF {
 
     @Override
     public void tankMovementController() {
-        
+
     }
 
     public void finishGame() {
