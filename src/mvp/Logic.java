@@ -12,7 +12,7 @@ public class Logic {
     private Creator creator;
     private Loader loader;
     private Serializer serializer;
-    // private Mover mover;
+    private Mover mover;
     private Decider decider;
 
     private List<Tank> tankList;
@@ -24,7 +24,7 @@ public class Logic {
         creator = new Creator();
         loader = new Loader(message, tanksPerArmy);
         serializer = new Serializer();
-        // mover = new Mover();
+        mover = new Mover();
         decider = new Decider();
 
         tankList = new ArrayList<>();
@@ -49,11 +49,9 @@ public class Logic {
         return serializer;
     }
 
-    /*
     public Mover getMover() {
         return mover;
     }
-    */
 
     public Decider getDecider() {
         return decider;
