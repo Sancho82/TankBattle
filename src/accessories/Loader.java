@@ -13,7 +13,18 @@ public class Loader {
     }
 
     public void load(Tank[][] tankMatrix, List<Tank> tankList, Creator creator) {
+        switch (this.message) {
 
+            case "US_GE":   loadAmericanTanks(tankMatrix, tankList, creator);
+                            loadGermanTanks(tankMatrix, tankList, creator);
+                            break;
+            case "GE_SU":   loadGermanTanks(tankMatrix, tankList, creator);
+                            loadSovietTanks(tankMatrix, tankList, creator);
+                            break;
+            case "US_SU":   loadAmericanTanks(tankMatrix, tankList, creator);
+                            loadSovietTanks(tankMatrix,tankList, creator);
+                            break;
+        }
     }
 
     public void loadGermanTanks(Tank[][] tankMatrix, List<Tank> tankList, Creator creator) {
