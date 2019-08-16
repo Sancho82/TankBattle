@@ -1,9 +1,19 @@
 package mvp;
 
-interface ViewIF {
+import accessories.Tank;
 
+public interface Contract {
+
+    interface ViewIF {
+        void setSetupScreen();
+        void setMapScreen();
+        void mapDrawer();
+        void tankDrawer(Tank[][] tankMatrix);
+        void setEndScreen(String announcement);
+    }
+
+    interface PresenterIF {
+
+    }
 }
 
-interface PresenterIF {
-
-}
