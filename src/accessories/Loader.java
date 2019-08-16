@@ -44,7 +44,7 @@ public class Loader {
         }
     }
 
-    public void loadUSTanks(Tank[][] tankMatrix, List<Tank> tankList, Creator creator) {
+    public void loadAmericanTanks(Tank[][] tankMatrix, List<Tank> tankList, Creator creator) {
         for (int i = 0; i < tanksPerArmy; i++) {
             int random = (int)(Math.random() * 12) + 1;
             Tank tank;
