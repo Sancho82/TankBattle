@@ -104,6 +104,26 @@ public class View extends JFrame implements Contract.ViewIF {
         setupButton.setFont(defaultFont);
         setupButton.setText("Go!");
 
+        setupButton.addActionListener(e -> {
+            if (setupTextField.getText().matches(setupTextField.getText().length() == 1 ? "[1-9]" : "[1][0-2]")) {
+                if (americans.isSelected() && germans.isSelected() && !soviets.isSelected()) {
+                    presenter.startGame("US_GE", Integer.parseInt(setupTextField.getText()));
+
+                } else if (!americans.isSelected() && germans.isSelected() && soviets.isSelected()) {
+                    presenter.startGame("GE_SU", Integer.parseInt(setupTextField.getText()));
+
+                } else if (americans.isSelected() && !germans.isSelected() && soviets.isSelected()) {
+                    presenter.startGame("US_SU", Integer.parseInt(setupTextField.getText()));
+
+                } else {
+                    setupSides.setText(" Choose exactly two opponents!");
+                }
+
+            } else {
+                setupTanksPerArmy.setText(" Type a number between 1 and 12!");
+            }
+        });
+
         setupPanel.add(americans);
         setupPanel.add(germans);
         setupPanel.add(soviets);
