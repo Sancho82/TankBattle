@@ -34,7 +34,7 @@ public class View extends JFrame implements Contract.ViewIF {
     private Presenter presenter;
 
     public View() {
-        
+
     }
 
     @Override

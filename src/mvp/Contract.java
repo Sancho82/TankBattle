@@ -13,7 +13,9 @@ public interface Contract {
     }
 
     interface PresenterIF {
-
+        void startGame(String message, int tanksPerArmy);
+        void tankMovementController();
+        void finishGame();
     }
 }
 
