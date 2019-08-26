@@ -8,7 +8,6 @@ import java.util.List;
 
 public class Logic {
 
-    private Music music;
     private Creator creator;
     private Loader loader;
     private Serializer serializer;
@@ -20,7 +19,6 @@ public class Logic {
 
     public Logic(String message, int tanksPerArmy) {
 
-        music = new Music();
         creator = new Creator();
         loader = new Loader(message, tanksPerArmy);
         serializer = new Serializer();
@@ -32,10 +30,6 @@ public class Logic {
     }
 
     //region Getters
-
-    public Music getMusic() {
-        return music;
-    }
 
     public Creator getCreator() {
         return creator;
