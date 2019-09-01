@@ -26,27 +26,27 @@ public class Music extends TimerTask{
     }
 
     public void run() {
-        if (flag) {
-            try {
+
+        try {
+
+            if (flag) {
                 clip = AudioSystem.getClip();
                 clip.open(AudioSystem.getAudioInputStream(theme));
                 clip.start();
 
-            } catch (LineUnavailableException lue) {
-                System.out.println("LineUnavailableException:");
-                System.out.println(lue.getMessage());
-
-            } catch (IOException ioe) {
-                System.out.println("IOException:");
-                System.out.println(ioe.getMessage());
-
-            } catch (UnsupportedAudioFileException usafe) {
-                System.out.println("UnsupportedAudioFileException:");
-                System.out.println(usafe.getMessage());
             }
 
-        } else {
-            timer.cancel();
+        } catch (LineUnavailableException lue) {
+            System.out.println("LineUnavailableException:");
+            System.out.println(lue.getMessage());
+
+        } catch (IOException ioe) {
+            System.out.println("IOException:");
+            System.out.println(ioe.getMessage());
+
+        } catch (UnsupportedAudioFileException usafe) {
+            System.out.println("UnsupportedAudioFileException:");
+            System.out.println(usafe.getMessage());
         }
     }
 
@@ -56,6 +56,8 @@ public class Music extends TimerTask{
         if(clip.isActive()) {
             clip.stop();
             clip.flush();
+            clip.close();
+            timer.cancel();
         }
     }
 
