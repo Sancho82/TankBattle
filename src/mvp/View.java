@@ -29,8 +29,8 @@ public class View extends JFrame implements Contract.ViewIF {
     private JButton replayButton;
     private JButton quitButton;
 
-    GameColors gameColors;
-    Font defaultFont = new Font("Verdana", Font.BOLD, 14);
+    private GameColors gameColors;
+    private Font defaultFont = new Font("Verdana", Font.BOLD, 14);
 
     private Presenter presenter;
 
