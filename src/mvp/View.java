@@ -78,7 +78,6 @@ public class View extends JFrame implements Contract.ViewIF {
         setupSides.setForeground(Color.white);
         setupSides.setFont(defaultFont);
 
-
         americans = new JCheckBox("Americans");
         americans.setBounds(50, 90, 145, 60);
         americans.setBackground(gameColors.getUsMilitary());
